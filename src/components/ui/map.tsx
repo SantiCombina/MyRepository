@@ -5,9 +5,9 @@ export function Map() {
         <ComposableMap
             projection="geoAzimuthalEqualArea"
             projectionConfig={{
-                rotate: [-10.0, -52.0, 0],
-                center: [-5, -3],
-                scale: 1600,
+                rotate: [60, 30, -5],
+                center: [0, 0],
+                scale: 800,
             }}
             style={{width: "100%", height: "100%"}}
         >
@@ -22,7 +22,7 @@ export function Map() {
                 }}
                 dx={-90}
                 dy={-30}
-                subject={[2.3522, 48.8566]}
+                subject={[-64, -32]}
             >
                 <text alignmentBaseline="middle" fill="white" textAnchor="end" x="-8">
                     {"Argentina"}
