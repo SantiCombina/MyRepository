@@ -19,7 +19,10 @@ export function Header({headerRef}: Props) {
                 <p className="text-[#DFD9FF] max-w-[550px] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 pb-3 text-center break-words">
                     I develop 3D websites, user interfaces and web applications
                 </p>
-                <a className="px-4 py-1 text-white bg-pink-600 border-2 border-pink-600 rounded-md" href="">
+                <a
+                    className="px-4 py-1 text-white transition-transform duration-300 bg-pink-600 rounded-md hover:scale-110 active:scale-100 active:bg-pink-800"
+                    href=""
+                >
                     Resume
                     <i className="pl-2 fa-light fa-file-arrow-down" />
                 </a>

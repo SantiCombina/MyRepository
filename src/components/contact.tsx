@@ -16,7 +16,7 @@ export function Contact({contactRef}: Props) {
             <div className="flex flex-col items-center justify-center w-full h-full gap-x-12 xl:items-end px-9">
                 <form className="flex flex-col gap-6 items-center justify-center w-[500px] bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col w-fit">
-                        <h3 className="text-[#aaa6c3] text-sm">GET IN TOUCH</h3>
+                        <h3 className="text-[#AAA6C3] text-sm">GET IN TOUCH</h3>
                         <h2 className="text-3xl font-bold">Contact Me</h2>
                     </div>
                     <input className="rounded-md p-5 w-full bg-[#151030] outline-none" placeholder="Name" />
@@ -26,7 +26,7 @@ export function Contact({contactRef}: Props) {
                         placeholder="Write your message"
                         rows={6}
                     />
-                    <button className="bg-pink-600 font-semibold rounded-sm cursor-pointer p-5 w-full shadow-md shadow-[#151030]">
+                    <button className="bg-pink-600 font-semibold rounded-sm cursor-pointer p-5 w-full shadow-md shadow-[#151030] active:bg-pink-800">
                         Send
                     </button>
                 </form>
