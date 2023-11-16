@@ -19,7 +19,7 @@ export function Projects({projectsRef}: Props) {
                     <h3 className="text-[#AAA6C3] text-sm">MY WORK</h3>
                     <h2 className="text-3xl font-bold">Projects</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-7">
                     {projectsMockup.map((project) => (
                         <ProjectCard
                             key={project.id}

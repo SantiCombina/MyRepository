@@ -12,7 +12,7 @@ export function Header({headerRef}: Props) {
             ref={headerRef}
             className="flex flex-col-reverse items-center justify-center w-full h-screen gap-32 px-9 md:flex-row"
         >
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center mt-7">
                 <h1 className="font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] text-center leading-[60px]">
                     Hi, I&apos;m <span className="text-[#915eff]">Santiago</span>
                 </h1>
