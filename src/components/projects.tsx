@@ -10,7 +10,7 @@ interface Props {
 
 export function Projects({projectsRef}: Props) {
     return (
-        <div
+        <section
             ref={projectsRef}
             className="flex items-center justify-center w-full py-32 text-white bg-primary md:h-screen md:py-0 px-9"
         >
@@ -32,6 +32,6 @@ export function Projects({projectsRef}: Props) {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

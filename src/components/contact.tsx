@@ -12,9 +12,9 @@ export function Contact({contactRef}: Props) {
     const breakpoint = useBreakpoint();
 
     return (
-        <div ref={contactRef} className="flex h-screen text-white bg-primary">
+        <section ref={contactRef} className="flex h-screen text-white bg-primary">
             <div className="flex flex-col items-center justify-center w-full h-full gap-x-12 xl:items-end px-9">
-                <form className="flex flex-col gap-6 items-center justify-center w-[500px] bg-[#100d25] p-5 rounded-xl mt-[84px]">
+                <form className="flex flex-col gap-6 items-center justify-center max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col w-fit">
                         <h3 className="text-[#AAA6C3] text-sm">GET IN TOUCH</h3>
                         <h2 className="text-3xl font-bold">Contact Me</h2>
@@ -45,6 +45,6 @@ export function Contact({contactRef}: Props) {
                     <Map />
                 </div>
             )}
-        </div>
+        </section>
     );
 }
