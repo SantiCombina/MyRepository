@@ -2,6 +2,9 @@ import {MutableRefObject} from "react";
 
 import {useScroll} from "../../hooks/useScroll";
 
+import {useLanguageStore} from "@/stores/language-store";
+import {navbarTranslate} from "@/i18n/navbar-translates";
+
 interface Props {
     headerRef: MutableRefObject<null>;
     skillsRef: MutableRefObject<null>;
@@ -11,6 +14,9 @@ interface Props {
 
 export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
     const navStyle = "text-gray-300 hover:text-white text-xl font-medium cursor-pointer";
+
+    const language = useLanguageStore((state) => state.languageValue);
+    const textTranslated = navbarTranslate[language];
 
     const scrollToRef = (ref: MutableRefObject<null | HTMLElement>) => {
         return ref.current && ref.current.scrollIntoView({behavior: "smooth"});
@@ -28,20 +34,20 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                     onClick={() => scrollToRef(headerRef)}
                 >
                     Santiago Combina
-                    <span className="hidden sm:block">| Frontend developer</span>
+                    <span className="hidden sm:block">| {textTranslated.navbar_logo}</span>
                 </span>
                 <ul className="flex-row hidden gap-10 list-none sm:flex">
                     <li className={navStyle} onClick={() => scrollToRef(headerRef)}>
-                        Home
+                        {textTranslated.navbar_sections.home}
                     </li>
                     <li className={navStyle} onClick={() => scrollToRef(projectsRef)}>
-                        Work
+                        {textTranslated.navbar_sections.work}
                     </li>
                     <li className={navStyle} onClick={() => scrollToRef(skillsRef)}>
-                        Skills
+                        {textTranslated.navbar_sections.skills}
                     </li>
                     <li className={navStyle} onClick={() => scrollToRef(contactRef)}>
-                        Contact
+                        {textTranslated.navbar_sections.contact}
                     </li>
                 </ul>
             </div>

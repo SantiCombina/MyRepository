@@ -1,5 +1,6 @@
 export const navbarTranslate = {
     ES: {
+        navbar_logo: "Desarrollador Frontend",
         navbar_sections: {
             home: "Inicio",
             work: "Trabajo",
@@ -8,6 +9,7 @@ export const navbarTranslate = {
         },
     },
     EN: {
+        navbar_logo: "Frontend developer",
         navbar_sections: {
             home: "Home",
             work: "Work",
