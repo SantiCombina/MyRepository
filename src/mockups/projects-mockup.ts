@@ -5,7 +5,7 @@ export const projectsMockup = [
             EN: "Pokémon App",
             ES: "Pokémon App",
         },
-        image: "/pokemon-project.png",
+        image: "/pokemon-project.webp",
         description: {
             EN: "Dive into the fun as you unravel the identity of Pokémon hidden in shadows.",
             ES: "Sumérgete en la diversión mientras desentrañas la identidad de Pokémon ocultos en sombras.",
@@ -19,7 +19,7 @@ export const projectsMockup = [
             EN: "Netflix Clone",
             ES: "Clon de Netflix",
         },
-        image: "/netflix-project.png",
+        image: "/netflix-project.webp",
         description: {
             EN: "Recreate the Netflix experience with this web cloning project.",
             ES: "Recrea la experiencia de Netflix con este proyecto de clonación web.",
@@ -33,7 +33,7 @@ export const projectsMockup = [
             EN: "Gym Website",
             ES: "Gym Website",
         },
-        image: "/gym-project.png",
+        image: "/gym-project.webp",
         description: {
             EN: "Showcasing services, facilities, and everything the gym has to offer.",
             ES: "Destacando servicios, instalaciones y todo lo que el gimnasio tiene para ofrecer.",
@@ -47,7 +47,7 @@ export const projectsMockup = [
             EN: "Rick & Morty Explorer",
             ES: "Rick & Morty Explorador",
         },
-        image: "/rick&morty-project.png",
+        image: "/rick&morty-project.webp",
         description: {
             EN: "Explore all the characters from the series and get detailed information.",
             ES: "Explora todos los personajes de la serie y obtén información detallada.",
