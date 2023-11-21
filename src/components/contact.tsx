@@ -1,11 +1,19 @@
 import {MutableRefObject} from "react";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
+import emailjs from "emailjs-com";
+import {toast} from "sonner";
 
 import {useBreakpoint} from "../hooks/useBreakpoint";
 
 import {Map} from "./ui/map";
+import {Input} from "./ui/input";
+import {Button} from "./ui/button";
 
 import {useLanguageStore} from "@/stores/language-store";
 import {contactTranslate} from "@/i18n/contact-translates";
+import {FormValues, formSchema} from "@/schemas/form-schema";
+import {PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID} from "@/services/config";
 
 interface Props {
     contactRef: MutableRefObject<null>;
@@ -17,27 +25,63 @@ export function Contact({contactRef}: Props) {
     const language = useLanguageStore((state) => state.languageValue);
     const contactTranslated = contactTranslate[language];
 
-    const inputStyle = "rounded-md p-5 w-full bg-[#151030] outline-none";
+    const methods = useForm<FormValues>({
+        resolver: zodResolver(formSchema),
+        mode: "all",
+    });
+
+    const submitHandler = (values: FormValues) => {
+        const templateParams = {
+            to_name: "Santiago",
+            from_name: values.name,
+            from_email: values.email,
+            message: values.textarea,
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY).then(
+            () => {
+                toast.success("Mensaje enviado con éxito");
+            },
+            () => {
+                toast.error("Ocurrió un error al enviar el mensaje");
+            },
+        );
+    };
 
     return (
         <section ref={contactRef} className="flex h-screen text-white bg-primary">
             <div className="flex flex-col items-center justify-center w-full h-full gap-x-12 xl:items-end px-9">
-                <form className="flex flex-col gap-6 items-center justify-center max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
-                    <div className="flex flex-col w-fit">
+                <div className="flex flex-col items-center justify-center max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
+                    <div className="flex flex-col pb-4 w-fit">
                         <h3 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h3>
                         <h2 className="text-3xl font-bold">{contactTranslated.subtitle}</h2>
                     </div>
-                    <input className={inputStyle} placeholder={contactTranslated.input_name} />
-                    <input className={inputStyle} placeholder={contactTranslated.input_email} />
-                    <textarea
-                        className={`${inputStyle} resize-none`}
-                        placeholder={contactTranslated.input_textarea}
-                        rows={6}
-                    />
-                    <button className="bg-pink-600 font-semibold rounded-sm cursor-pointer p-5 w-full shadow-md shadow-[#151030] active:bg-pink-800">
-                        {contactTranslated.send}
-                    </button>
-                </form>
+                    <form action="" className="w-full gap-4" onSubmit={methods.handleSubmit(submitHandler)}>
+                        <Input
+                            error={methods.formState.errors.name?.message}
+                            label={contactTranslated.input_name}
+                            name="name"
+                            register={methods.register}
+                        />
+                        <Input
+                            error={methods.formState.errors.email?.message}
+                            label={contactTranslated.input_email}
+                            name="email"
+                            register={methods.register}
+                        />
+                        <label htmlFor="textarea">
+                            <textarea
+                                className="rounded-md p-5 w-full bg-[#151030] outline-none resize-none"
+                                id="textarea"
+                                placeholder={contactTranslated.input_textarea}
+                                rows={6}
+                                {...methods.register("textarea")}
+                            />
+                            <h3 className="h-6 text-red-500">{methods.formState.errors.textarea?.message}</h3>
+                        </label>
+                        <Button type="submit" />
+                    </form>
+                </div>
                 <div className="flex w-[500px] text-gray-600 justify-center items-center pt-6 gap-5 text-3xl">
                     <a href="https://www.linkedin.com/in/santiago-combina/" rel="noreferrer" target="_blank">
                         {" "}
