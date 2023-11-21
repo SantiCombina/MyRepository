@@ -50,7 +50,7 @@ export function Contact({contactRef}: Props) {
 
     return (
         <section ref={contactRef} className="flex h-screen text-white bg-primary">
-            <div className="flex flex-col items-center justify-center w-full h-full gap-x-12 xl:items-end px-9">
+            <div className="flex flex-col items-center justify-center w-full h-full py-32 gap-x-12 xl:items-end px-9">
                 <div className="flex flex-col items-center justify-center max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col pb-4 w-fit">
                         <h3 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h3>

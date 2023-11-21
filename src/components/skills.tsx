@@ -15,13 +15,16 @@ export function Skills({skillsRef}: Props) {
     const skillsTranslated = skillsTranslate[language];
 
     return (
-        <section ref={skillsRef} className="flex items-center justify-center h-screen text-white bg-primary px-9">
+        <section
+            ref={skillsRef}
+            className="flex items-center justify-center py-32 text-white md:h-screen bg-primary px-9"
+        >
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <div className="flex flex-col w-fit">
                     <h3 className="text-[#AAA6C3] text-sm">{skillsTranslated.title}</h3>
                     <h2 className="text-3xl font-bold">{skillsTranslated.subtitle}</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-7">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-7">
                     {skillsMockup.map((skill) => (
                         <SkillCard key={skill.id} image={skill.image} name={skill.name} />
                     ))}
