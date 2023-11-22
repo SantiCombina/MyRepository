@@ -49,9 +49,9 @@ export function Contact({contactRef}: Props) {
     };
 
     return (
-        <section ref={contactRef} className="flex h-screen text-white bg-primary">
-            <div className="flex flex-col items-center justify-center w-full h-full py-32 gap-x-12 xl:items-end px-9">
-                <div className="flex flex-col items-center justify-center max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
+        <section ref={contactRef} className="flex items-center justify-center min-h-screen text-white bg-primary">
+            <div className="flex flex-col items-center justify-center w-full h-full py-10 gap-x-12 xl:items-end px-9">
+                <div className="flex flex-col items-center justify-center h-full max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col pb-4 w-fit">
                         <h3 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h3>
                         <h2 className="text-3xl font-bold">{contactTranslated.subtitle}</h2>
@@ -69,15 +69,15 @@ export function Contact({contactRef}: Props) {
                             name="email"
                             register={methods.register}
                         />
-                        <label htmlFor="textarea">
+                        <label className="flex flex-col" htmlFor="textarea">
                             <textarea
-                                className="rounded-md p-5 w-full bg-[#151030] outline-none resize-none"
+                                className="rounded-md md:p-5 p-2 w-full bg-[#151030] outline-none resize-none"
                                 id="textarea"
                                 placeholder={contactTranslated.input_textarea}
-                                rows={6}
+                                rows={breakpoint.is.sm ? 4 : 6}
                                 {...methods.register("textarea")}
                             />
-                            <h3 className="h-6 text-red-500">{methods.formState.errors.textarea?.message}</h3>
+                            <h3 className="text-sm text-red-500 h-7">{methods.formState.errors.textarea?.message}</h3>
                         </label>
                         <Button type="submit" />
                     </form>
@@ -93,7 +93,7 @@ export function Contact({contactRef}: Props) {
                 </div>
             </div>
             {(breakpoint.is.xl || breakpoint.is["2xl"]) && (
-                <div className="flex items-center justify-center w-full h-full">
+                <div className="flex items-center justify-center w-full h-screen">
                     <Map />
                 </div>
             )}

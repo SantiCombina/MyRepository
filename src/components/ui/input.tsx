@@ -13,13 +13,13 @@ export function Input({label, name, error, register, type = "text"}: Props) {
         <label htmlFor={name}>
             <input
                 autoComplete="off"
-                className="rounded-md p-5 w-full bg-[#151030] outline-none resize-none"
+                className="rounded-md md:p-5 p-2 w-full bg-[#151030] outline-none resize-none"
                 id={name}
                 type={type}
                 {...register(name)}
                 placeholder={label}
             />
-            <h3 className="h-6 text-red-500">{error ? error : ""}</h3>
+            <h3 className="text-sm text-red-500 h-7">{error ? error : ""}</h3>
         </label>
     );
 }

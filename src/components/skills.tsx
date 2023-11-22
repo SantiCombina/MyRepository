@@ -17,7 +17,7 @@ export function Skills({skillsRef}: Props) {
     return (
         <section
             ref={skillsRef}
-            className="flex items-center justify-center py-32 text-white md:h-screen bg-primary px-9"
+            className="flex items-center justify-center min-h-screen py-10 text-white bg-primary px-9"
         >
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <div className="flex flex-col w-fit">
