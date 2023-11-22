@@ -18,7 +18,7 @@ export function Projects({projectsRef}: Props) {
     return (
         <section
             ref={projectsRef}
-            className="flex items-center justify-center w-full min-h-screen py-10 text-white bg-primary px-9"
+            className="flex items-center justify-center w-full min-h-screen py-10 text-white bg-gradient-to-r from-[#0B0613] via-[#0A051B] to-[#0E0916] px-9"
         >
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <div className="flex flex-col w-fit">

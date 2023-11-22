@@ -49,7 +49,10 @@ export function Contact({contactRef}: Props) {
     };
 
     return (
-        <section ref={contactRef} className="flex items-center justify-center min-h-screen text-white bg-primary">
+        <section
+            ref={contactRef}
+            className="flex items-center justify-center min-h-screen text-white bg-gradient-to-r from-[#0A0613] via-[#0A051B] to-[#0E0916]"
+        >
             <div className="flex flex-col items-center justify-center w-full h-full py-10 gap-x-12 xl:items-end px-9">
                 <div className="flex flex-col items-center justify-center h-full max-w-[500px] w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col pb-4 w-fit">
