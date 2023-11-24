@@ -7,15 +7,10 @@ export interface LanguageStore {
     setLanguage: (language: Languages) => void;
 }
 
-const getDefaultLanguage = (): Languages => {
-    const userLanguage = navigator.language.toLowerCase();
-    const mainLanguage = userLanguage.split("-")[0];
-
-    return mainLanguage === "es" ? "ES" : "EN";
-};
+const getNavigatorLanguage = navigator.language.split("-")[0].toUpperCase();
 
 export const useLanguageStore = create<LanguageStore>((set) => ({
-    languageValue: getDefaultLanguage(),
+    languageValue: getNavigatorLanguage === "EN" ? "EN" : "ES",
     setLanguage: (language: Languages) => {
         set({languageValue: language});
     },

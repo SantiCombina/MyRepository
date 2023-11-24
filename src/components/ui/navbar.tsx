@@ -1,6 +1,7 @@
 import {MutableRefObject} from "react";
 
 import {useScroll} from "../../hooks/useScroll";
+import {Dropdown} from "../dropdown";
 
 import {useLanguageStore} from "@/stores/language-store";
 import {navbarTranslate} from "@/i18n/navbar-translates";
@@ -36,20 +37,34 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                     Santiago Combina
                     <span className="hidden sm:block">| {textTranslated.navbar_logo}</span>
                 </span>
-                <ul className="flex-row hidden gap-10 list-none sm:flex">
-                    <li className={navStyle} onClick={() => scrollToRef(headerRef)}>
-                        {textTranslated.navbar_sections.home}
-                    </li>
-                    <li className={navStyle} onClick={() => scrollToRef(projectsRef)}>
-                        {textTranslated.navbar_sections.work}
-                    </li>
-                    <li className={navStyle} onClick={() => scrollToRef(skillsRef)}>
-                        {textTranslated.navbar_sections.skills}
-                    </li>
-                    <li className={navStyle} onClick={() => scrollToRef(contactRef)}>
-                        {textTranslated.navbar_sections.contact}
-                    </li>
-                </ul>
+                <div className="flex gap-10">
+                    <ul className="flex-row hidden gap-10 list-none sm:flex">
+                        <li className={navStyle} onClick={() => scrollToRef(headerRef)}>
+                            {textTranslated.navbar_sections.home}
+                        </li>
+                        <li className={navStyle} onClick={() => scrollToRef(projectsRef)}>
+                            {textTranslated.navbar_sections.work}
+                        </li>
+                        <li className={navStyle} onClick={() => scrollToRef(skillsRef)}>
+                            {textTranslated.navbar_sections.skills}
+                        </li>
+                        <li className={navStyle} onClick={() => scrollToRef(contactRef)}>
+                            {textTranslated.navbar_sections.contact}
+                        </li>
+                    </ul>
+                    <Dropdown
+                        trigger={
+                            <div className="flex items-center gap-1 text-gray-300">
+                                <img
+                                    alt="language icon"
+                                    className="h-6 cursor-pointer hover:text-white"
+                                    src="/language-icon.svg"
+                                />
+                                <span>{language.toLowerCase()}</span>
+                            </div>
+                        }
+                    />
+                </div>
             </div>
         </nav>
     );
