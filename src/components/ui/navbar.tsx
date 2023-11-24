@@ -54,13 +54,13 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                     </ul>
                     <Dropdown
                         trigger={
-                            <div className="flex items-center gap-1 text-gray-300">
+                            <div className="flex items-center text-lg text-gray-300">
                                 <img
                                     alt="language icon"
                                     className="h-6 cursor-pointer hover:text-white"
                                     src="/language-icon.svg"
                                 />
-                                <span>{language.toLowerCase()}</span>
+                                {language.toLowerCase()}
                             </div>
                         }
                     />
