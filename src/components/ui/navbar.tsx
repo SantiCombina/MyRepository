@@ -1,7 +1,7 @@
 import {MutableRefObject} from "react";
 
 import {useScroll} from "../../hooks/useScroll";
-import {Dropdown} from "../dropdown";
+import {LanguageDropdown} from "../dropdown/language-dropdown";
 
 import {useLanguageStore} from "@/stores/language-store";
 import {navbarTranslate} from "@/i18n/navbar-translates";
@@ -52,7 +52,7 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                             {textTranslated.navbar_sections.contact}
                         </li>
                     </ul>
-                    <Dropdown
+                    <LanguageDropdown
                         trigger={
                             <div className="flex items-center text-lg text-gray-300">
                                 <img

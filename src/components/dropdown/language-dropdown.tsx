@@ -5,12 +5,12 @@ interface Props {
     trigger: React.ReactNode;
 }
 
-export function Dropdown({trigger}: Props) {
+export function LanguageDropdown({trigger}: Props) {
     const changeLanguage = useLanguageStore((state) => state.setLanguage);
 
     return (
         <DropdownMenu modal={false}>
-            <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>
+            <DropdownMenuTrigger className="focus:outline-none">{trigger}</DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-black/80">
                 <DropdownMenuItem onClick={() => changeLanguage("EN")}>en</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => changeLanguage("ES")}>es</DropdownMenuItem>
