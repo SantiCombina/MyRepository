@@ -31,7 +31,9 @@ export function Header({headerRef}: Props) {
                     </p>
                     <a
                         className="px-4 py-1 text-white transition-transform duration-300 bg-pink-600 rounded-md hover:scale-110 active:scale-100 active:bg-pink-800"
-                        href=""
+                        href={headerTranslated.resume_link}
+                        rel="noopener noreferrer"
+                        target="_blank"
                     >
                         {headerTranslated.resume_download}
                         <i className="pl-2 fa-light fa-file-arrow-down" />
