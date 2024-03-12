@@ -56,7 +56,7 @@ export const skillsMockup = [
     },
     {
         id: 11,
-        name: "MySQL",
-        image: "/icons/mysql.svg",
+        name: "PostgreSQL",
+        image: "/icons/postgresql.svg",
     },
 ];
