@@ -24,7 +24,7 @@ export function Skills({skillsRef}: Props) {
                     <h3 className="text-[#AAA6C3] text-sm">{skillsTranslated.title}</h3>
                     <h2 className="text-3xl font-bold">{skillsTranslated.subtitle}</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-7">
+                <div className="grid grid-cols-3 md:grid-cols-4 gap-7">
                     {skillsMockup.map((skill) => (
                         <SkillCard key={skill.id} image={skill.image} name={skill.name} />
                     ))}
