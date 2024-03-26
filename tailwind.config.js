@@ -17,6 +17,9 @@ module.exports = {
             backgroundImage: {
                 "hero-pattern": "url('./assets/herobg.png')",
             },
+            maxWidth: {
+                notebook: "1440px",
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -63,9 +66,6 @@ module.exports = {
                     from: {height: "var(--radix-accordion-content-height)"},
                     to: {height: 0},
                 },
-            },
-            maxWidth: {
-                notebook: "1440px",
             },
         },
     },
