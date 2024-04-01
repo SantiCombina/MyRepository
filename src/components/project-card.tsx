@@ -23,14 +23,14 @@ export function ProjectCard({image, name, description, deploy, repository}: Prop
                 <h2 className="px-3 pt-2 font-bold">{name}</h2>
                 <p className="px-3 pt-[2px] text-sm leading-snug text-[#DFD9FF]">{description}</p>
             </div>
-            {/* <div className="flex justify-center gap-6 py-1">
+            <div className="flex justify-center gap-6 py-1 text-sm">
                 <a className={buttonStyle} href={deploy} rel="noreferrer" target="_blank">
                     {projectsTranslated.projectCard.deploy}
                 </a>
                 <a className={buttonStyle} href={repository} rel="noreferrer" target="_blank">
                     {projectsTranslated.projectCard.repository}
                 </a>
-            </div> */}
+            </div>
         </article>
     );
 }
