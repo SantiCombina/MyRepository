@@ -13,7 +13,7 @@ export function Portfolio() {
     const contactRef = useRef(null);
 
     return (
-        <div className="h-screen overflow-y-auto bg-no-repeat bg-cover bg-primary bg-hero-pattern scroll-smooth font-monserrat">
+        <div className="min-h-screen overflow-y-auto bg-no-repeat bg-primary bg-hero-pattern scroll-smooth font-monserrat">
             <Navbar contactRef={contactRef} headerRef={headerRef} projectsRef={projectsRef} skillsRef={skillsRef} />
             <Header headerRef={headerRef} />
             <Projects projectsRef={projectsRef} />
