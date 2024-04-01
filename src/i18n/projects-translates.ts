@@ -11,7 +11,7 @@ export const projectsTranslate = {
         title: "MI TRABAJO",
         subtitle: "Proyectos",
         projectCard: {
-            deploy: "Desplegar",
+            deploy: "Ver sitio",
             repository: "Repositorio",
         },
     },

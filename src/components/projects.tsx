@@ -18,14 +18,14 @@ export function Projects({projectsRef}: Props) {
     return (
         <section
             ref={projectsRef}
-            className="flex items-center justify-center w-full min-h-screen py-10 text-white bg-gradient-to-r from-[#0B0613] via-[#0A051B] to-[#0E0916] px-9"
+            className="flex items-center justify-center w-full min-h-screen py-20 text-white bg-gradient-to-r from-[#0B0613] via-[#0A051B] to-[#0E0916] px-9"
         >
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <div className="flex flex-col w-fit">
                     <h3 className="text-[#AAA6C3] text-sm">{projectsTranslated.title}</h3>
                     <h2 className="text-3xl font-bold">{projectsTranslated.subtitle}</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-7">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                     {projectsMockup.map((project) => (
                         <ProjectCard
                             key={project.id}
