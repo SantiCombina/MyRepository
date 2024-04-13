@@ -72,7 +72,9 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                                             <img
                                                 alt="language icon"
                                                 className="h-6 cursor-pointer hover:text-white"
+                                                height={"24"}
                                                 src="/language-icon.svg"
+                                                width={"24"}
                                             />
                                             {language.toLowerCase()}
                                         </div>

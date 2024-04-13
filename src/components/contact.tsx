@@ -56,8 +56,8 @@ export function Contact({contactRef}: Props) {
             <div className="flex flex-col items-center justify-center flex-1 w-full h-full py-10 gap-x-12 xl:items-end px-9">
                 <div className="flex flex-col max-w-[500px] items-center justify-center h-full w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col pb-4 w-fit">
-                        <h3 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h3>
-                        <h2 className="text-3xl font-bold">{contactTranslated.subtitle}</h2>
+                        <h2 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h2>
+                        <h3 className="text-3xl font-bold">{contactTranslated.subtitle}</h3>
                     </div>
                     <form action="" className="w-full gap-4" onSubmit={methods.handleSubmit(submitHandler)}>
                         <Input
@@ -86,11 +86,21 @@ export function Contact({contactRef}: Props) {
                     </form>
                 </div>
                 <div className="flex items-center justify-center w-full max-w-[500px] gap-5 pt-6 text-3xl text-gray-600">
-                    <a href="https://www.linkedin.com/in/santiago-combina/" rel="noreferrer" target="_blank">
+                    <a
+                        aria-label="Go to my Linkedin"
+                        href="https://www.linkedin.com/in/santiago-combina/"
+                        rel="noreferrer"
+                        target="_blank"
+                    >
                         {" "}
                         <i className="fa-brands fa-linkedin hover:text-[#0A66C2] hover:scale-125 transition-all duration-300" />
                     </a>
-                    <a href="https://github.com/SantiCombina" rel="noreferrer" target="_blank">
+                    <a
+                        aria-label="Go to my Github"
+                        href="https://github.com/SantiCombina"
+                        rel="noreferrer"
+                        target="_blank"
+                    >
                         <i className="fa-brands fa-github hover:text-[#E6EDF3] hover:scale-125 transition-all duration-300" />
                     </a>
                 </div>

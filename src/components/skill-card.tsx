@@ -9,7 +9,9 @@ export function SkillCard({image, name}: Props) {
             <img
                 alt="skill image"
                 className="transition-transform duration-700 hover:[transform:rotateY(-360deg)]"
+                height={"96"}
                 src={image}
+                width={"96"}
             />
             {name}
         </div>

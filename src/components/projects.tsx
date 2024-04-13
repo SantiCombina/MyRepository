@@ -22,8 +22,8 @@ export function Projects({projectsRef}: Props) {
         >
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <div className="flex flex-col w-fit">
-                    <h3 className="text-[#AAA6C3] text-sm">{projectsTranslated.title}</h3>
-                    <h2 className="text-3xl font-bold">{projectsTranslated.subtitle}</h2>
+                    <h2 className="text-[#AAA6C3] text-sm">{projectsTranslated.title}</h2>
+                    <h3 className="text-3xl font-bold">{projectsTranslated.subtitle}</h3>
                 </div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                     {projectsMockup.map((project) => (

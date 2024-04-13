@@ -19,7 +19,7 @@ export function ProjectCard({image, name, description, deploy, repository}: Prop
     return (
         <article className="rounded-xl max-w-[350px] bg-[#100D25] p-2 flex flex-col justify-between gap-2 hover:bg-[#151030]">
             <div className="flex flex-col">
-                <img alt="project image" className="rounded-t-lg select-none" src={image} />
+                <img alt="project image" className="rounded-t-lg select-none" src={image} width={"334"} />
                 <h2 className="px-3 pt-2 font-bold">{name}</h2>
                 <p className="px-3 pt-[2px] text-sm leading-snug text-[#DFD9FF]">{description}</p>
             </div>

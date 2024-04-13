@@ -45,7 +45,7 @@ export function Header({headerRef}: Props) {
                 className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 animate-bounce"
                 height={"320"}
                 src={face}
-                width={"323.64"}
+                width={"320"}
             />
         </header>
     );
