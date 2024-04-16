@@ -10,7 +10,7 @@ export function LanguageDropdown({trigger}: Props) {
 
     return (
         <DropdownMenu modal={false}>
-            <DropdownMenuTrigger className="focus:outline-none">{trigger}</DropdownMenuTrigger>
+            <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-black/80">
                 <DropdownMenuItem onClick={() => changeLanguage("EN")}>en</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => changeLanguage("ES")}>es</DropdownMenuItem>

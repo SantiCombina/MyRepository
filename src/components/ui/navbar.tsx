@@ -52,36 +52,56 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                     {isMobile ? (
                         <Hamburger color="white" toggled={menuOpen} onToggle={() => setMenuOpen(!menuOpen)} />
                     ) : (
-                        <ul className="flex flex-row gap-10 text-xl list-none">
-                            <li className={navStyle} onClick={() => scrollToRef(headerRef)}>
-                                {textTranslated.navbar_sections.home}
-                            </li>
-                            <li className={navStyle} onClick={() => scrollToRef(projectsRef)}>
-                                {textTranslated.navbar_sections.work}
-                            </li>
-                            <li className={navStyle} onClick={() => scrollToRef(skillsRef)}>
-                                {textTranslated.navbar_sections.skills}
-                            </li>
-                            <li className={navStyle} onClick={() => scrollToRef(contactRef)}>
-                                {textTranslated.navbar_sections.contact}
-                            </li>
-                            <li>
-                                <LanguageDropdown
-                                    trigger={
-                                        <div className="flex items-center text-xl text-gray-300">
-                                            <img
-                                                alt="language icon"
-                                                className="h-6 cursor-pointer hover:text-white"
-                                                height={"24"}
-                                                src="/language-icon.svg"
-                                                width={"24"}
-                                            />
-                                            {language.toLowerCase()}
-                                        </div>
-                                    }
-                                />
-                            </li>
-                        </ul>
+                        <>
+                            <ul className="flex flex-row gap-10 text-xl list-none">
+                                <li
+                                    className={navStyle}
+                                    tabIndex={0}
+                                    onClick={() => scrollToRef(headerRef)}
+                                    onKeyDown={(e) => e.key === "Enter" && scrollToRef(headerRef)}
+                                >
+                                    {textTranslated.navbar_sections.home}
+                                </li>
+                                <li
+                                    className={navStyle}
+                                    tabIndex={0}
+                                    onClick={() => scrollToRef(projectsRef)}
+                                    onKeyDown={(e) => e.key === "Enter" && scrollToRef(projectsRef)}
+                                >
+                                    {textTranslated.navbar_sections.work}
+                                </li>
+                                <li
+                                    className={navStyle}
+                                    tabIndex={0}
+                                    onClick={() => scrollToRef(skillsRef)}
+                                    onKeyDown={(e) => e.key === "Enter" && scrollToRef(skillsRef)}
+                                >
+                                    {textTranslated.navbar_sections.skills}
+                                </li>
+                                <li
+                                    className={navStyle}
+                                    tabIndex={0}
+                                    onClick={() => scrollToRef(contactRef)}
+                                    onKeyDown={(e) => e.key === "Enter" && scrollToRef(contactRef)}
+                                >
+                                    {textTranslated.navbar_sections.contact}
+                                </li>
+                            </ul>
+                            <LanguageDropdown
+                                trigger={
+                                    <div className="flex items-center text-xl text-gray-300">
+                                        <img
+                                            alt="language icon"
+                                            className="h-6 cursor-pointer hover:text-white"
+                                            height={"24"}
+                                            src="/language-icon.svg"
+                                            width={"24"}
+                                        />
+                                        {language.toLowerCase()}
+                                    </div>
+                                }
+                            />
+                        </>
                     )}
                 </div>
                 {isMobile && (
