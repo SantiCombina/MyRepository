@@ -1,8 +1,9 @@
-import {MutableRefObject} from "react";
+import {MutableRefObject, useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com";
 import {toast} from "sonner";
+import {z} from "zod";
 
 import {useBreakpoint} from "../hooks/useBreakpoint";
 
@@ -11,8 +12,7 @@ import {Input} from "./ui/input";
 import {Button} from "./ui/button";
 
 import {useLanguageStore} from "@/stores/language-store";
-import {contactTranslate} from "@/i18n/contact-translates";
-import {FormValues, formSchema} from "@/schemas/form-schema";
+import {contactTranslate, languageErrorMap} from "@/i18n/contact-translates";
 import {PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID} from "@/services/config";
 
 interface Props {
@@ -25,9 +25,28 @@ export function Contact({contactRef}: Props) {
     const language = useLanguageStore((state) => state.languageValue);
     const contactTranslated = contactTranslate[language];
 
+    const schema = z.object({
+        name: z.string().min(1, {message: languageErrorMap[language].name_required}),
+        email: z
+            .string()
+            .min(1, {message: languageErrorMap[language].email_required})
+            .email({message: languageErrorMap[language].email_invalid}),
+        textarea: z.string().min(1, {message: languageErrorMap[language].message_required}),
+    });
+
+    type FormValues = z.infer<typeof schema>;
+
+    const schemaLanguage = {
+        EN: schema,
+        ES: schema,
+    };
+
+    const test = schemaLanguage[language];
+
     const methods = useForm<FormValues>({
-        resolver: zodResolver(formSchema),
+        resolver: zodResolver(test),
         mode: "all",
+        reValidateMode: "onChange",
     });
 
     const submitHandler = (values: FormValues) => {
@@ -40,13 +59,23 @@ export function Contact({contactRef}: Props) {
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY).then(
             () => {
-                toast.success("Mensaje enviado con éxito");
+                toast.success(contactTranslated.success);
             },
             () => {
-                toast.error("Ocurrió un error al enviar el mensaje");
+                toast.error(contactTranslated.error);
             },
         );
     };
+
+    useEffect(() => {
+        const triggers: ("name" | "email" | "textarea")[] = [];
+
+        methods.getFieldState("name").invalid && triggers.push("name");
+        methods.getFieldState("email").invalid && triggers.push("email");
+        methods.getFieldState("textarea").invalid && triggers.push("textarea");
+
+        triggers.length > 0 && methods.trigger(triggers);
+    }, [language]); //eslint-disable-line
 
     return (
         <section
