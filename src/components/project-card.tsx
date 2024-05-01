@@ -1,3 +1,5 @@
+import {motion} from "framer-motion";
+
 import {projectsTranslate} from "@/i18n/projects-translates";
 import {useLanguageStore} from "@/stores/language-store";
 
@@ -13,11 +15,22 @@ export function ProjectCard({image, name, description, deploy, repository}: Prop
     const language = useLanguageStore((state) => state.languageValue);
     const projectsTranslated = projectsTranslate[language];
 
+    const item = {
+        hidden: {y: 20, opacity: 0},
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
+
     const buttonStyle =
         "px-3 text-[#DFD9FF] transition-transform duration-300 bg-[#100d25] rounded-md active:scale-100 shadow-primary shadow-md hover:scale-110";
 
     return (
-        <article className="rounded-xl max-w-[350px] bg-[#100D25] p-2 flex flex-col justify-between gap-2 hover:bg-[#151030]">
+        <motion.article
+            className="rounded-xl max-w-[350px] bg-[#100D25] p-2 flex flex-col justify-between gap-2 hover:bg-[#151030]"
+            variants={item}
+        >
             <div className="flex flex-col">
                 <img alt="project image" className="rounded-t-lg select-none" src={image} width={"334"} />
                 <h2 className="px-3 pt-2 font-bold">{name}</h2>
@@ -31,7 +44,7 @@ export function ProjectCard({image, name, description, deploy, repository}: Prop
                     {projectsTranslated.projectCard.repository}
                 </a>
             </div>
-        </article>
+        </motion.article>
     );
 }
 

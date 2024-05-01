@@ -1,5 +1,6 @@
 import {Twirl as Hamburger} from "hamburger-react";
 import {MutableRefObject, useState} from "react";
+import {motion} from "framer-motion";
 
 import {LanguageDropdown} from "../dropdown/language-dropdown";
 
@@ -38,7 +39,14 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
 
     return (
         <nav className="fixed top-0 z-20 flex items-center justify-center w-full h-16 px-6 sm:px-9 bg-primary">
-            <div className="flex items-center justify-between w-full max-w-notebook">
+            <motion.div
+                animate={{y: 0}}
+                className="flex items-center justify-between w-full max-w-notebook"
+                initial={{y: -200}}
+                transition={{
+                    duration: 0.3,
+                }}
+            >
                 <span
                     className={`${
                         isMobile ? "flex-col items-start leading-4" : "items-center"
@@ -127,7 +135,7 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                         </li>
                     </ul>
                 )}
-            </div>
+            </motion.div>
         </nav>
     );
 }

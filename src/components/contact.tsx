@@ -1,19 +1,20 @@
-import {MutableRefObject, useEffect} from "react";
-import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com";
+import {MutableRefObject, useEffect} from "react";
+import {useForm} from "react-hook-form";
 import {toast} from "sonner";
 import {z} from "zod";
+import {motion} from "framer-motion";
 
 import {useBreakpoint} from "../hooks/useBreakpoint";
 
-import {Map} from "./ui/map";
-import {Input} from "./ui/input";
 import {Button} from "./ui/button";
+import {Input} from "./ui/input";
+import {Map} from "./ui/map";
 
-import {useLanguageStore} from "@/stores/language-store";
 import {contactTranslate, languageErrorMap} from "@/i18n/contact-translates";
 import {PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID} from "@/services/config";
+import {useLanguageStore} from "@/stores/language-store";
 
 interface Props {
     contactRef: MutableRefObject<null>;
@@ -82,7 +83,12 @@ export function Contact({contactRef}: Props) {
             ref={contactRef}
             className="flex items-center justify-center min-h-screen text-white bg-gradient-to-r from-[#0A0613] via-[#0A051B] to-[#0E0916]"
         >
-            <div className="flex flex-col items-center justify-center flex-1 w-full h-full py-10 gap-x-12 xl:items-end px-9">
+            <motion.div
+                className="flex flex-col items-center justify-center flex-1 w-full h-full py-10 gap-x-12 xl:items-end px-9"
+                initial={{x: -200, opacity: 0}}
+                viewport={{once: true, amount: 0.2}}
+                whileInView={{x: 0, opacity: 1}}
+            >
                 <div className="flex flex-col max-w-[500px] items-center justify-center h-full w-full bg-[#100d25] p-5 rounded-xl mt-[84px]">
                     <div className="flex flex-col pb-4 w-fit">
                         <h2 className="text-[#AAA6C3] text-sm">{contactTranslated.title}</h2>
@@ -133,11 +139,16 @@ export function Contact({contactRef}: Props) {
                         <i className="fa-brands fa-github hover:text-[#E6EDF3] hover:scale-125 transition-all duration-300" />
                     </a>
                 </div>
-            </div>
+            </motion.div>
             {(breakpoint.is.xl || breakpoint.is["2xl"]) && (
-                <div className="flex items-center justify-center flex-1 w-full h-screen">
+                <motion.div
+                    className="flex items-center justify-center flex-1 w-full h-screen"
+                    initial={{x: 200, opacity: 0}}
+                    viewport={{once: true, amount: 0.2}}
+                    whileInView={{x: 0, opacity: 1}}
+                >
                     <Map />
-                </div>
+                </motion.div>
             )}
         </section>
     );

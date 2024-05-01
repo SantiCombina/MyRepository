@@ -1,4 +1,5 @@
 import {MutableRefObject} from "react";
+import {motion} from "framer-motion";
 
 import {face} from "../assets";
 
@@ -18,7 +19,14 @@ export function Header({headerRef}: Props) {
             ref={headerRef}
             className="flex flex-col-reverse items-center justify-center w-full min-h-screen gap-2 py-10 md:gap-32 px-9 md:flex-row"
         >
-            <div className="flex flex-col items-center justify-center gap-2 mt-7">
+            <motion.div
+                animate={{opacity: 1, scale: 1}}
+                className="flex flex-col items-center justify-center gap-2 mt-7"
+                initial={{opacity: 0, scale: 0}}
+                transition={{
+                    type: "spring",
+                }}
+            >
                 <h1 className="font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] md:leading-[60px] text-center leading-[45px]">
                     {headerTranslated.title}{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-pink-600">
@@ -39,12 +47,19 @@ export function Header({headerRef}: Props) {
                         <i className="pl-2 fa-light fa-file-arrow-down" />
                     </a>
                 </div>
-            </div>
-            <img
+            </motion.div>
+            <motion.img
                 alt="face"
+                animate={{rotate: 360, scale: 1}}
                 className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 animate-bounce"
                 height={"320"}
+                initial={{scale: 0}}
                 src={face}
+                transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                }}
                 width={"320"}
             />
         </header>
