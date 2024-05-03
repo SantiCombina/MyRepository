@@ -128,7 +128,7 @@ export function Contact({contactRef}: Props) {
                         target="_blank"
                     >
                         {" "}
-                        <i className="fa-brands fa-linkedin hover:text-[#0A66C2] hover:scale-125 transition-all duration-300" />
+                        <i className="fa-brands fa-linkedin hover:text-[#0A66C2] hover:scale-125 active:scale-110 active:text-blue-900 transition-all duration-300" />
                     </a>
                     <a
                         aria-label="Go to my Github"
@@ -136,7 +136,7 @@ export function Contact({contactRef}: Props) {
                         rel="noreferrer"
                         target="_blank"
                     >
-                        <i className="fa-brands fa-github hover:text-[#E6EDF3] hover:scale-125 transition-all duration-300" />
+                        <i className="fa-brands fa-github hover:text-[#E6EDF3] hover:scale-125 active:scale-110 active:text-gray-600 transition-all duration-300" />
                     </a>
                 </div>
             </motion.div>
