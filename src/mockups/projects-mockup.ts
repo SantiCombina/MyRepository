@@ -11,7 +11,6 @@ export const projectsMockup = [
             ES: "Recrea la experiencia de Netflix con este proyecto de clonación web.",
         },
         deploy: "https://nexflit-six.vercel.app/",
-        repository: "https://github.com/GinoNovello/netflix-clon",
     },
     {
         id: 1,
@@ -25,7 +24,6 @@ export const projectsMockup = [
             ES: "Organiza tus tareas pendientes y aumenta tu productividad.",
         },
         deploy: "https://todo-list-umber-three.vercel.app/",
-        repository: "https://github.com/SantiCombina/todo-list",
     },
     {
         id: 2,
@@ -39,7 +37,6 @@ export const projectsMockup = [
             ES: "Plataforma de chat en tiempo real con mensajería instantánea.",
         },
         deploy: "https://socket-chat-production-6d06.up.railway.app/",
-        repository: "https://github.com/SantiCombina/socket-chat",
     },
     {
         id: 3,
@@ -53,7 +50,6 @@ export const projectsMockup = [
             ES: "Destacando todo lo que el gimnasio tiene para ofrecer.",
         },
         deploy: "https://san-francisco-gym.vercel.app/",
-        repository: "https://github.com/SantiCombina/GymPage",
     },
     {
         id: 4,
@@ -67,7 +63,6 @@ export const projectsMockup = [
             ES: "Diviértete mientras desentrañas la identidad de Pokémon ocultos.",
         },
         deploy: "https://find-pokemon-gold.vercel.app",
-        repository: "https://github.com/SantiCombina/FindPokemon",
     },
     {
         id: 5,
@@ -81,6 +76,5 @@ export const projectsMockup = [
             ES: "Explora los personajes de la serie y obtén información.",
         },
         deploy: "https://rick-and-morty-zeta-eight.vercel.app",
-        repository: "https://github.com/SantiCombina/RickAndMorty",
     },
 ];

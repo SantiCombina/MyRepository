@@ -49,7 +49,6 @@ export function Projects({projectsRef}: Props) {
                             description={project.description[language]}
                             image={project.image}
                             name={project.name[language]}
-                            repository={project.repository}
                         />
                     ))}
                 </motion.div>
