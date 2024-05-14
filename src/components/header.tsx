@@ -55,6 +55,7 @@ export function Header({headerRef}: Props) {
                 height={"320"}
                 initial={{scale: 0}}
                 src={face}
+                style={{filter: "drop-shadow(0px 0px 10px #ff85f518)"}}
                 transition={{
                     type: "spring",
                     stiffness: 260,
