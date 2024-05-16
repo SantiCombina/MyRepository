@@ -1,8 +1,6 @@
 import {MutableRefObject} from "react";
 import {motion} from "framer-motion";
 
-import {face} from "../assets";
-
 import {headerTranslate} from "@/i18n/header-translates";
 import {useLanguageStore} from "@/stores/language-store";
 
@@ -54,7 +52,7 @@ export function Header({headerRef}: Props) {
                 className="rounded-full select-none w-60 h-60 md:h-80 md:w-80 animate-bounce"
                 height={"320"}
                 initial={{scale: 0}}
-                src={face}
+                src="./src/assets/face.webp"
                 style={{filter: "drop-shadow(0px 0px 10px #ff85f518)"}}
                 transition={{
                     type: "spring",
