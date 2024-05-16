@@ -28,10 +28,7 @@ export function Skills({skillsRef}: Props) {
     };
 
     return (
-        <section
-            ref={skillsRef}
-            className="flex items-center justify-center min-h-screen py-10 text-white bg-gradient-to-r from-[#0A0613] via-[#0A051B] to-[#0E0916] px-9"
-        >
+        <section ref={skillsRef} className="flex items-center justify-center min-h-screen py-10 px-9">
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <Title h2={skillsTranslated.title} h3={skillsTranslated.subtitle} />
                 <motion.div

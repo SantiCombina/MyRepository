@@ -15,7 +15,7 @@ module.exports = {
                 monserrat: "'Montserrat', sans-serif",
             },
             backgroundImage: {
-                "hero-pattern": "url('./herobg.webp')",
+                "hero-pattern": "url('./assets/herobg.webp')",
             },
             maxWidth: {
                 notebook: "1440px",

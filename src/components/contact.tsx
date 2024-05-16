@@ -79,10 +79,7 @@ export function Contact({contactRef}: Props) {
     }, [language]); //eslint-disable-line
 
     return (
-        <section
-            ref={contactRef}
-            className="flex items-center justify-center min-h-screen text-white bg-gradient-to-r from-[#0A0613] via-[#0A051B] to-[#0E0916]"
-        >
+        <section ref={contactRef} className="flex items-center justify-center min-h-screen">
             <motion.div
                 className="flex flex-col items-center justify-center flex-1 w-full h-full py-10 gap-x-12 xl:items-end px-9"
                 initial={{x: -200, opacity: 0}}

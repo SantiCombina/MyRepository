@@ -50,7 +50,7 @@ export function Navbar({headerRef, skillsRef, projectsRef, contactRef}: Props) {
                 <span
                     className={`${
                         isMobile ? "flex-col items-start leading-4" : "items-center"
-                    } flex gap-1 text-lg font-bold text-white cursor-pointer`}
+                    } flex gap-1 text-lg font-bold cursor-pointer`}
                     onClick={() => scrollToRef(headerRef)}
                 >
                     Santiago Combina

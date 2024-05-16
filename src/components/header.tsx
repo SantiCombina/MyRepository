@@ -15,7 +15,7 @@ export function Header({headerRef}: Props) {
     return (
         <header
             ref={headerRef}
-            className="flex flex-col-reverse items-center justify-center w-full min-h-screen gap-2 py-10 md:gap-32 px-9 md:flex-row"
+            className="flex flex-col-reverse items-center justify-center w-full min-h-screen gap-2 py-10 bg-center bg-no-repeat bg-cover md:gap-32 px-9 md:flex-row bg-hero-pattern"
         >
             <motion.div
                 animate={{opacity: 1, scale: 1}}
@@ -25,7 +25,7 @@ export function Header({headerRef}: Props) {
                     type: "spring",
                 }}
             >
-                <h1 className="font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] md:leading-[60px] text-center leading-[45px]">
+                <h1 className="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] md:leading-[60px] text-center leading-[45px]">
                     {headerTranslated.title}{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-pink-600">
                         Santiago
@@ -36,7 +36,7 @@ export function Header({headerRef}: Props) {
                         {headerTranslated.bio}
                     </p>
                     <a
-                        className="px-4 py-1 text-white transition-transform duration-300 bg-pink-600 rounded-md hover:scale-110 active:scale-100 active:bg-pink-800"
+                        className="px-4 py-1 transition-transform duration-300 bg-pink-600 rounded-md hover:scale-110 active:scale-100 active:bg-pink-800"
                         href={headerTranslated.resume_link}
                         rel="noopener noreferrer"
                         target="_blank"
