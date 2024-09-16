@@ -120,7 +120,7 @@ export function Contact({contactRef}: Props) {
                 <div className="flex items-center justify-center w-full max-w-[500px] gap-5 pt-6 text-3xl text-gray-600">
                     <a
                         aria-label="Go to my Linkedin"
-                        href="https://www.linkedin.com/in/santiago-combina/"
+                        href="https://www.linkedin.com/in/santiago-combina"
                         rel="noreferrer"
                         target="_blank"
                     >

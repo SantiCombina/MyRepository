@@ -36,7 +36,7 @@ export function Header({headerRef}: Props) {
                         {headerTranslated.bio}
                     </p>
                     <a
-                        className="px-4 py-1 transition-transform duration-300 bg-pink-600 rounded-md hover:scale-110 active:scale-100 active:bg-pink-800"
+                        className="px-4 py-1 transition-transform duration-300 bg-pink-600 rounded-md hover:scale-105 active:scale-100 active:bg-pink-600/90"
                         href={headerTranslated.resume_link}
                         rel="noopener noreferrer"
                         target="_blank"

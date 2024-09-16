@@ -32,7 +32,7 @@ export function Skills({skillsRef}: Props) {
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <Title h2={skillsTranslated.title} h3={skillsTranslated.subtitle} />
                 <motion.div
-                    className="grid grid-cols-3 md:grid-cols-4 gap-7"
+                    className="grid grid-cols-3 gap-8 md:grid-cols-4"
                     initial="hidden"
                     variants={container}
                     viewport={{once: true, amount: 0.2}}

@@ -33,7 +33,7 @@ export function Projects({projectsRef}: Props) {
             <div className="flex flex-col items-center justify-center gap-5 max-w-notebook">
                 <Title h2={projectsTranslated.title} h3={projectsTranslated.subtitle} />
                 <motion.div
-                    className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+                    className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
                     initial="hidden"
                     variants={container}
                     viewport={{once: true, amount: 0.2}}
